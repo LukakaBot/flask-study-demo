@@ -20,6 +20,10 @@ def get_time():
 def hello(name):
     return render_template('hello.html', name=name)
 
+@app.route('/greet/<name>')
+def greet(name):
+    return f'Hello, {name}!'
+
 @app.errorhandler(404)
 def page_not_found(error):
     return 'Page not found', 404
